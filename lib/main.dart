@@ -93,31 +93,24 @@ class _MoneyCounterState extends State<MoneyCounter> {
                   },
                 ),
                 CustomContainer(
-                  price: "10",
-                  onchanged: (data) {
-                    widget.totalprice =
-                        widget.totalprice + int.parse(data) * 10;
-                  },
-                  action: TextInputAction.send,
-                ),
+                    price: "10",
+                    onchanged: (data) {
+                      widget.totalprice =
+                          widget.totalprice + int.parse(data) * 10;
+                    }),
                 ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      // widget.totalprice;
-                      // print(widget.totalprice);
+                  onPressed: () async {
+                    setState(() {});
+                    Future.delayed(Duration(seconds: 2), () {
+                      widget.totalprice = 0;
                     });
+                    // widget.totalprice = 0;
                   },
                   child: const Text("Calculate"),
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      widget.totalprice = 0;
-                    });
-                    CustomContainer(
-                      price: "3",
-                      onchanged: (data) {},
-                    ).fieldText.dispose();
+                    setState(() {});
                   },
                   child: const Text("Clear"),
                 )

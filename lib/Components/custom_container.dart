@@ -4,12 +4,10 @@ class CustomContainer extends StatelessWidget {
   CustomContainer(
       {this.price,
       this.onchanged,
-      TextInputAction this.action = TextInputAction.next,
       this.onsubmit});
 
    TextEditingController fieldText = TextEditingController();
   Function(String data)? onsubmit;
-  TextInputAction action;
   String? price;
   Function(String data)? onchanged;
   int? textinttextfield;
@@ -22,9 +20,7 @@ class CustomContainer extends StatelessWidget {
       child: Center(
         child: TextField(
           controller: fieldText,
-          onSubmitted: onsubmit,
           keyboardType: TextInputType.number,
-          textInputAction: action,
           onChanged: onchanged,
           decoration: InputDecoration(
             enabledBorder: OutlineInputBorder(
